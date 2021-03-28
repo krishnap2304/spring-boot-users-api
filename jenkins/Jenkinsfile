@@ -24,10 +24,10 @@ pipeline {
                 }
             }
         }
-        stage('CreateJar') {
-            steps {
-                sh 'java -jar spring-boot-user-api-0.0.1-SNAPSHOT.jar'
-            }
+        stage("Run") {
+           steps{
+           sh 'mvn spring-boot:run -Dserver.port=8989 &'
+           }
         }
     }
 }
